@@ -11,7 +11,7 @@ export const siteConfig = {
   },
 
   session: {
-    price: "90",
+    price: "95",
     duration: "50 minutos",
     frequency: "Semanal",
   },

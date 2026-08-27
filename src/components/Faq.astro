@@ -1,4 +1,6 @@
 ---
+import { siteConfig } from '../data/siteConfig';
+
 const faqs = [
   {
     question: "E se eu não souber o que falar na primeira sessão?",
@@ -21,7 +23,7 @@ const faqs = [
     name: "faq-servicos",
     question: "Quanto custa e quanto tempo dura cada atendimento?",
     answers: [
-      "Cada atendimento custa <strong>R$ 90</strong> e dura <strong>50 minutos</strong>."
+      `Cada atendimento custa <strong>R$ ${siteConfig.session.price}</strong> e dura <strong>${siteConfig.session.duration}</strong>.`
     ]
   },
   {
