@@ -1,46 +1,55 @@
-# Astro Starter Kit: Basics
+# INSPEM Digital
+
+Site da clínica **INSPEM** — psicoterapia em Terapia Cognitivo-Comportamental no Bom Fim, Porto Alegre. Construído em [Astro](https://astro.build).
+
+## O que tem no site
+
+Landing page única com:
+
+- Hero e chamada para triagem pelo WhatsApp
+- Para quem é a clínica, como funciona e como começar
+- Investimento das sessões (R$ 95)
+- Equipe e supervisoras
+- Reconhecimento (nota no Google)
+- Localização no Edifício Baltimore, em frente ao Parque da Redenção
+- Galeria: fachada empilhada e salas em carrossel horizontal
+- FAQ (itens começam fechados) e rodapé com dados legais
+
+## Como rodar
+
+Requer Node.js 22.12 ou superior.
 
 ```sh
-npm create astro@latest -- --template basics
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+O servidor sobe em `http://localhost:4329`.
 
-## 🚀 Project Structure
+| Comando | O que faz |
+| --- | --- |
+| `npm run dev` | Servidor de desenvolvimento |
+| `npm run build` | Build de produção em `./dist/` |
+| `npm run preview` | Preview do build local |
 
-Inside of your Astro project, you'll see the following folders and files:
+`npm install` também instala a fonte Newsreader (`@fontsource/newsreader`).
+
+## Fotos
+
+As fotos já estão em `public/assets/` com os nomes atuais do repositório. Catálogo em `src/data/photos.ts`.
+
+A fachada é a única foto empilhada. As salas deslizam no carrossel: atendimento, espera, entrada, sala da equipe.
+
+O wordmark novo do header não entra pelo MCP (WebP corrompe). O site usa o logo que já está no repositório. Para trocar, faça upload pelo GitHub em `public/assets/` e atualize o `src` em `src/data/photos.ts`.
+
+## Estrutura
 
 ```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+src/
+├── components/   seções da landing (Hero, Equipe, FAQ…)
+├── data/         textos, contato, endereço, fotos e supervisoras
+├── layouts/      layout HTML base
+├── pages/        index.astro
+└── styles/       CSS global, mobile, fontes e refinamentos
+public/assets/    fotos da clínica e da equipe
 ```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
