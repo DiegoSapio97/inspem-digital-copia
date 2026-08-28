@@ -493,6 +493,11 @@ h1 em{font-style:italic;color:var(--accent)}
 }
 .quote p::before{ content:"\201C"; color:var(--accent); font-family:var(--serif); }
 .quote p::after{ content:"\201D"; color:var(--accent); font-family:var(--serif); }
+.quote footer{
+  font-size:13px; color:var(--muted); line-height:1.5;
+}
+.quote footer b{ color:var(--body); font-weight:600; }
+
 .peers{
   max-width:640px;
   border-left:3px solid var(--accent);
