@@ -1,0 +1,37 @@
+---
+import Layout from './Layout.astro';
+import Footer from '../components/Footer.astro';
+import Photo from '../components/Photo.astro';
+import { photos } from '../data/photos';
+
+interface Props {
+  title: string;
+  description?: string;
+  updatedAt?: string;
+}
+
+const { title, description, updatedAt } = Astro.props;
+---
+
+<Layout title={`${title} · INSPEM`} description={description ?? title}>
+  <header class="legal-header">
+    <a class="legal-header-logo" href="/" aria-label="INSPEM — voltar ao início">
+      <Photo photo={photos.logo} />
+    </a>
+    <a class="legal-header-back" href="/">← Voltar ao site</a>
+  </header>
+
+  <main class="legal-page">
+    <article class="legal-content">
+      <header class="legal-content-header">
+        <h1>{title}</h1>
+        {updatedAt && <p class="legal-updated">Última atualização: {updatedAt}</p>}
+      </header>
+      <div class="legal-prose">
+        <slot />
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</Layout>
